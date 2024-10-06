@@ -23,7 +23,6 @@ let products = loadFromLocalStorage();
 
 const productService = {
     getProducts: async (): Promise<Product[]> => {
-        // Fetch products from localStorage
         return new Promise((resolve) => setTimeout(() => resolve(products), 1000));
     },
 
@@ -55,7 +54,6 @@ const productService = {
             // Generate a description of what changed
             const changeDescription = getChangeDescription(previousProduct, product);
             
-            // Add a new history entry if there are any changes
             if (changeDescription) {
                 const changeEntry: InventoryChange = {
                     date: new Date().toISOString(),
